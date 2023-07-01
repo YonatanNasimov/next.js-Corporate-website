@@ -1,12 +1,12 @@
 import React from "react";
 
-const Dashboard = () => {
+const BlogPost = () => {
   return (
     <div>
-      Dashboard
       <div></div>
+      BlogPost
     </div>
   );
 };
 
-export default Dashboard;
+export default BlogPost;
