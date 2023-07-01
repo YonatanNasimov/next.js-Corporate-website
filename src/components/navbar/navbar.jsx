@@ -9,8 +9,8 @@ const links = [
   },
   {
     id: 2,
-    title: "PortFolio",
-    url: "/portFolio",
+    title: "Portfolio",
+    url: "/portfolio",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const links = [
     url: "/contact",
   },
   {
-    id: 3,
+    id: 6,
     title: "Dashboard",
     url: "/dashboard",
   },
@@ -39,9 +39,11 @@ const Navbar = () => {
     <header>
       <Link href="/">NASIMOV</Link>
       <div>
-        {links.map(link => {
-            <Link key={link.id} href={link.url}>{link.title}</Link>
-        })}
+        {links.map((link) => (
+          <Link key={link.id} href={link.url}>
+            {link.title}
+          </Link>
+        ))}
       </div>
     </header>
   );
