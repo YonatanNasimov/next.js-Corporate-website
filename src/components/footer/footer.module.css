@@ -21,6 +21,6 @@
 
 .single_icon:hover {
     opacity: 0.6;
-    transition: 500ms;
+    transition: 800ms;
     cursor: pointer;
 }
