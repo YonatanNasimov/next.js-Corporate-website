@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import styles from "./footer.module.css";
 import Link from "next/link";
@@ -14,18 +14,21 @@ const Footer = () => {
     <div className={styles.container}>
       <div>©{year} NASIMOV. All rights reserved</div>
       <div className={styles.social_icons}>
-        {footerSocialLinks.map((link) => {
-          <Link key={link.id} href="#">
-            {console.log(link.id)}
-            <Image
+        {footerSocialLinks.map((link) => (
+          <Link
+            className={styles.image_box}
+            title={link.alt}
+            key={link.id}
+            href={link.url}
+          >
+            <Image 
               src={link.src}
               alt={link.alt}
-              width={15}
-              height={15}
+              fill={true}
               className={styles.single_icon}
             />
-          </Link>;
-        })}
+          </Link>
+        ))}
       </div>
     </div>
   );

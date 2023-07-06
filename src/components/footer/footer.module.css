@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
+    padding-bottom: 8px;
 }
 
 .social_icons {
@@ -12,17 +13,14 @@
     gap: 10px;
 }
 
+.image_box {
+    width: 25px;
+    height: 25px;
+    position: relative;
+}
+
 .single_icon:hover {
     opacity: 0.6;
     transition: 500ms;
-    cursor: pointer;
-}
-
-.logout_button {
-    padding: 5px;
-    bottom: none;
-    color: white;
-    border-radius: 3px;
-    background-color: #53c58b;
     cursor: pointer;
 }

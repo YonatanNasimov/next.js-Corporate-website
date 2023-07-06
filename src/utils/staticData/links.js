@@ -35,21 +35,25 @@ export const footerSocialLinks = [
   {
     id: 1,
     src: "/images/1.png",
-    alt: "facebook icon",
+    alt: "Facebook icon",
+    url: "https://www.facebook.com",
   },
   {
     id: 2,
     src: "/images/2.png",
-    alt: "facebook icon",
+    alt: "Instegram icon",
+    url: "https://www.instagram.com/",
   },
   {
     id: 3,
     src: "/images/3.png",
-    alt: "facebook icon",
+    alt: "Twiter icon",
+    url: "https://twitter.com/",
   },
   {
     id: 4,
     src: "/images/4.png",
-    alt: "facebook icon",
+    alt: "Youtube icon",
+    url: "https://www.youtube.com/",
   },
 ];
