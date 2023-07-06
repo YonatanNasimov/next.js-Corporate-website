@@ -1,0 +1,28 @@
+.container {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.social_icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.single_icon:hover {
+    opacity: 0.6;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.logout_button {
+    padding: 5px;
+    bottom: none;
+    color: white;
+    border-radius: 3px;
+    background-color: #53c58b;
+    cursor: pointer;
+}
