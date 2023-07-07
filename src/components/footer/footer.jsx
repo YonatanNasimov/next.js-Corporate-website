@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./footer.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { footerSocialLinks } from "@/utils/staticData/links";
+import { companyName, footerSocialLinks } from "@/utils/staticData/links";
 
 const year = new Date().getFullYear();
 
@@ -12,16 +12,18 @@ const Footer = () => {
 
   return (
     <div className={styles.container}>
-      <div>©{year} NASIMOV. All rights reserved</div>
+      <div>
+        ©{year} {companyName}. All rights reserved
+      </div>
       <div className={styles.social_icons}>
         {footerSocialLinks.map((link) => (
           <Link
             className={styles.image_box}
-            title={link.alt}
+            title={link.url}
             key={link.id}
             href={link.url}
           >
-            <Image 
+            <Image
               src={link.src}
               alt={link.alt}
               fill={true}

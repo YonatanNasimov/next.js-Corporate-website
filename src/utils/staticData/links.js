@@ -57,3 +57,5 @@ export const footerSocialLinks = [
     url: "https://www.youtube.com/",
   },
 ];
+
+export const companyName = "NASIMOV" 

@@ -1,5 +1,5 @@
 "use client";
-import { links } from "@/utils/staticData/links";
+import { companyName, links } from "@/utils/staticData/links";
 import Link from "next/link";
 import React from "react";
 import styles from "./navbar.module.css";
@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <header className={styles.container}>
       <Link href="/" className={styles.logo}>
-        NASIMOV
+        {companyName}
       </Link>
       <div className={styles.links}>
         {links.map((link) => (
