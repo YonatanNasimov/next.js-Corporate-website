@@ -3,15 +3,17 @@ import styles from "./spiner.module.css";
 
 const Spiner = () => {
   return (
-    <div className={styles.lds-roller}>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div className={styles.container}>
+      <div className={styles.lds_roller}>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 };
