@@ -30,3 +30,38 @@
     cursor: pointer;
     border: none;
 }
+
+.burger {
+    display: none;
+}
+
+.burger i {
+    font-size: 24px;
+}
+
+
+
+@media (max-width: 1200px) {
+    .container {
+        height: 60px;
+        position: relative;
+    }
+
+    .links {
+        z-index: 2;
+        flex-direction: column;
+        width: 80%;
+        height: 300px;
+        background-color: #111111ea;
+        align-items: center;
+        position: absolute;
+        left: 22%;
+        top: 59px;
+        right: 0px;
+        padding-top: 8px;
+    }
+
+    .burger {
+        display: block;
+    }
+}

@@ -26,3 +26,13 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
+
+/* Mobile */
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 8px;
+  }
+}

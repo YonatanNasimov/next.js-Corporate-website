@@ -7,9 +7,11 @@ import styles from "./navbar.module.css";
 const Navbar = () => {
   return (
     <header className={styles.container}>
-      <Link href="/" className={styles.logo}>
-        {companyName}
-      </Link>
+      <div>
+        <Link href="/" className={styles.logo}>
+          {companyName}
+        </Link>
+      </div>
       <div className={styles.links}>
         {links.map((link) => (
           <Link key={link.id} href={link.url} className={styles.single_link}>
@@ -24,6 +26,9 @@ const Navbar = () => {
         >
           Log Out
         </button>
+      </div>
+      <div className={styles.burger}>
+        <i class="fa fa-bars" aria-hidden="true"></i>
       </div>
     </header>
   );
