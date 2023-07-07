@@ -12,7 +12,7 @@ export default function Home() {
           Turnnig your idea into reality. We bring togther the teams from blobal
           tech industry.
         </p>
-        <Button url="portfolio" text="See Our Works" />
+        <Button url="/portfolio" text="See Our Works" />
       </div>
       <div className={styles.box}>
         <Image
