@@ -22,6 +22,7 @@
 
 .textContainer {
   display: flex;
+  flex-wrap: wrap;
   gap: 100px;
 }
 
@@ -42,3 +43,5 @@
 .item ul {
   margin-left: 20px;
 }
+
+@media (max-width: 1200px) {}
