@@ -16,6 +16,22 @@
     gap: 20px;
 }
 
+.links_mobile {
+    display: none;
+    z-index: 2;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    height: 300px;
+    background-color: #111;
+    align-items: center;
+    position: absolute;
+    left: 22.5%;
+    top: 59px;
+    right: 0px;
+    padding-top: 8px;
+}
+
 .single_link:hover {
     color: #53c58b;
     transition: 800ms;
@@ -48,17 +64,16 @@
     }
 
     .links {
-        z-index: 2;
-        flex-direction: column;
-        width: 80%;
-        height: 300px;
-        background-color: #111111ea;
-        align-items: center;
-        position: absolute;
-        left: 22%;
-        top: 59px;
-        right: 0px;
-        padding-top: 8px;
+        display: none;
+    }
+
+    .links_mobile {
+        display: flex;
+    }
+
+    .single_link:hover {
+        color: inherit;
+        transition: none;
     }
 
     .burger {
