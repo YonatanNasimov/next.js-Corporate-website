@@ -36,9 +36,16 @@ const Navbar = () => {
       {isMobileMenuOpen ? (
         <div className={styles.links_mobile}>
           {links.map((link) => (
-            <Link key={link.id} href={link.url} className={styles.single_link}>
-              {link.title}
-            </Link>
+            <>
+              <Link
+                key={link.id}
+                href={link.url}
+                className={styles.single_link}
+              >
+                {link.title}
+              </Link>
+              <hr />
+            </>
           ))}
           <button
             onClick={() => {

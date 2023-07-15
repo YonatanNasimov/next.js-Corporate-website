@@ -22,7 +22,7 @@
     flex-direction: column;
     gap: 20px;
     width: 80%;
-    height: 300px;
+    height: 400px;
     background-color: #111;
     align-items: center;
     position: absolute;
@@ -74,6 +74,13 @@
     .single_link:hover {
         color: inherit;
         transition: none;
+    }
+
+    .links_mobile hr {
+        margin: 0 auto;
+        width: 70%;
+        color: #53c28b;
+        background-color: #53c28b;
     }
 
     .burger {
