@@ -36,16 +36,15 @@ const Navbar = () => {
       {isMobileMenuOpen ? (
         <div className={styles.links_mobile}>
           {links.map((link) => (
-            <>
+            <div className={styles.links_mobile_box} key={link.id}>
               <Link
-                key={link.id}
                 href={link.url}
                 className={styles.single_link}
               >
                 {link.title}
               </Link>
               <hr />
-            </>
+            </div>
           ))}
           <button
             onClick={() => {

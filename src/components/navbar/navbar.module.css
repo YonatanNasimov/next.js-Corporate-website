@@ -32,6 +32,22 @@
     padding-top: 8px;
 }
 
+.links_mobile_box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.links_mobile_box hr {
+    margin: 0 auto;
+    width: 75%;
+    color: #53c28b;
+    background-color: #53c28b;
+}
+
+
 .single_link:hover {
     color: #53c58b;
     transition: 800ms;
@@ -74,13 +90,6 @@
     .single_link:hover {
         color: inherit;
         transition: none;
-    }
-
-    .links_mobile hr {
-        margin: 0 auto;
-        width: 70%;
-        color: #53c28b;
-        background-color: #53c28b;
     }
 
     .burger {
