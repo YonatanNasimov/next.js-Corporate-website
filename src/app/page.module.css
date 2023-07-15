@@ -27,15 +27,37 @@
 .box .img {
   width: 100%;
   height: 500px;
-  object-fit: cover;
+  object-fit: contain;
+  animation: move 2s infinite ease alternate;
+  /* 
+  move => identifier name.
+  2s => The animation will take 3 seconds.
+  ease => creates a smooth, gradual transition.
+  infinite => repeat indefinitely.
+  alternate => whem animation ends it will do the same move.
+  */
 }
 
+@keyframes move {
+
+  /* 
+  move the img 15px on the Y axis 
+  and at the same time reduces the image
+  */
+  from {
+      transform: translateY(-10px);
+  }
+
+  to {
+      transform: translateY(0px);
+  }
+}
 /* Mobile */
 @media (max-width: 1200px) {
   .container {
     gap: 50px;
+    flex-direction: column;
   }
-
 
   .box .img {
     width: 100%;

@@ -1,6 +1,89 @@
+.container {}
+
+.title {
+    font-size: 60px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 100px;
+}
+
+.image_container {
+    flex: 1;
+    height: 500px;
+    position: relative;
+}
+
+.image {
+    object-fit: contain;
+    animation: move 2s infinite ease alternate;
+    /* 
+    move => identifier name.
+    2s => The animation will take 3 seconds.
+    ease => creates a smooth, gradual transition.
+    infinite => repeat indefinitely.
+    alternate => whem animation ends it will do the same move.
+    */
+}
+
+@keyframes move {
+
+    /* 
+    move the img 15px on the Y axis 
+    and at the same time reduces the image
+    */
+    from {
+        transform: translateY(-15px);
+    }
+
+    to {
+        transform: translateY(0px) scale(1.03);
+    }
+}
+
+.form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form .input,
+.textArea {
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #bbb;
+    border: 3px solid #bbb;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 4px;
+}
 
 
+@media (max-width: 1200px) {
+    .title {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
 
-.container {
-    background-color: aqua;
+    .content {
+        justify-content: center;
+    }
+
+    .image_container {
+        display: none;
+    }
+
+    .form {
+        width: 90%;
+        padding: 12px;
+        gap: 12px;
+    }
 }
