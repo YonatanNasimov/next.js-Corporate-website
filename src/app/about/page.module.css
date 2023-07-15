@@ -22,7 +22,7 @@
 
 .textContainer {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 100px;
 }
 
@@ -44,4 +44,9 @@
   margin-left: 20px;
 }
 
-@media (max-width: 1200px) {}
+@media (max-width: 1200px) {
+  .textContainer {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
