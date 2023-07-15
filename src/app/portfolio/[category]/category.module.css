@@ -59,11 +59,12 @@
   }
 
   .img_container {
-    order: 1 !important;
+    order: 1;
   }
 
   .content {
-    order: 2 !important;
+    order: 2;
     padding: 8px;
+    gap: 12px;
   }
 }
