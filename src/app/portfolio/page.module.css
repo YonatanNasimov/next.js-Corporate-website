@@ -1,6 +1,6 @@
 .main_title {
     font-size: 80px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .container {
@@ -13,6 +13,7 @@
 
 .items {
     display: flex;
+    align-items: center;
     gap: 50px;
 }
 
@@ -47,4 +48,10 @@
 
 .item:hover .title {
     color: #53c28b;
+}
+
+@media (max-width: 1200px) {
+    .items {
+        flex-direction: column;
+    }
 }
