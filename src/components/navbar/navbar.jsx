@@ -35,7 +35,7 @@ const Navbar = () => {
       </div>
       {isMobileMenuOpen ? (
         <div className={styles.links_mobile}>
-          {links.map((link) => (
+          {navbarLinks.map((link) => (
             <div className={styles.links_mobile_box} key={link.id}>
               <Link
                 href={link.url}
