@@ -1,5 +1,5 @@
 "use client";
-import { companyName, links } from "@/utils/staticData/links";
+import { companyName, navbarLinks } from "@/utils/staticData/links";
 import Link from "next/link";
 import React, { useState } from "react";
 import styles from "./navbar.module.css";
@@ -19,7 +19,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className={styles.links}>
-        {links.map((link) => (
+        {navbarLinks.map((link) => (
           <Link key={link.id} href={link.url} className={styles.single_link}>
             {link.title}
           </Link>
