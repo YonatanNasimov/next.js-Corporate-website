@@ -45,15 +45,17 @@ const Navbar = () => {
               <hr />
             </div>
           ))}
-          <button
-            onClick={() => {
-              console.log("Logged Out..."); // we will use 'CSR' because here we need some interact we user who use our app/system/website and its a small component, The first rendering is already done (deatails what importent for google scan already done).
-            }}
-            className={styles.logout_button}
-          >
-            Log Out
-          </button>
-          <DarkModeToggle />
+          <div className={styles.dark_mode_box}>
+            <button
+              onClick={() => {
+                console.log("Logged Out..."); // we will use 'CSR' because here we need some interact we user who use our app/system/website and its a small component, The first rendering is already done (deatails what importent for google scan already done).
+              }}
+              className={styles.logout_button}
+            >
+              Log Out
+            </button>
+            <DarkModeToggle />
+          </div>
         </div>
       ) : (
         ""

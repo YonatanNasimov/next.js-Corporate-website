@@ -63,6 +63,12 @@
     border: none;
 }
 
+.dark_mode_box{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
 .burger {
     display: none;
 }
