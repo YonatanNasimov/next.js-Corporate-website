@@ -48,3 +48,18 @@
     color: #999;
     text-align: justify;
 }
+
+@media (max-width: 1200px) {
+    .top {
+        flex-direction: column;
+    }
+
+    .info {
+        gap: 12px;
+    }
+
+    .imageContainer {
+        flex: none;
+        margin: 30px 0px 0px 0px;
+    }
+}

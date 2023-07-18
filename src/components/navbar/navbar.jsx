@@ -3,6 +3,7 @@ import { companyName, navbarLinks } from "@/utils/staticData/links";
 import Link from "next/link";
 import React, { useState } from "react";
 import styles from "./navbar.module.css";
+import DarkModeToggle from "../darkModeToggle/darkModeToggle";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,6 +20,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className={styles.links}>
+        <DarkModeToggle />
         {navbarLinks.map((link) => (
           <Link key={link.id} href={link.url} className={styles.single_link}>
             {link.title}
@@ -37,10 +39,7 @@ const Navbar = () => {
         <div className={styles.links_mobile}>
           {navbarLinks.map((link) => (
             <div className={styles.links_mobile_box} key={link.id}>
-              <Link
-                href={link.url}
-                className={styles.single_link}
-              >
+              <Link href={link.url} className={styles.single_link}>
                 {link.title}
               </Link>
               <hr />
@@ -54,6 +53,7 @@ const Navbar = () => {
           >
             Log Out
           </button>
+          <DarkModeToggle />
         </div>
       ) : (
         ""
