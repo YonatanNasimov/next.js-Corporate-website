@@ -1,9 +1,10 @@
 "use client";
 import { companyName, navbarLinks } from "@/utils/staticData/links";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./navbar.module.css";
 import DarkModeToggle from "../darkModeToggle/darkModeToggle";
+import { ThemeContext } from "@/context/themeContext";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,6 +12,8 @@ const Navbar = () => {
   const handleToggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const { mode } = useContext(ThemeContext);
 
   return (
     <header className={styles.container}>
@@ -36,7 +39,7 @@ const Navbar = () => {
         </button>
       </div>
       {isMobileMenuOpen ? (
-        <div className={styles.links_mobile}>
+        <div className={`${styles.links_mobile} ${mode}`}>
           {navbarLinks.map((link) => (
             <div className={styles.links_mobile_box} key={link.id}>
               <Link href={link.url} className={styles.single_link}>
