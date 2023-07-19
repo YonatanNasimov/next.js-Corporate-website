@@ -39,7 +39,7 @@ const Navbar = () => {
         </button>
       </div>
       {isMobileMenuOpen ? (
-        <div className={`${styles.links_mobile} ${mode}`}>
+        <div className={`${styles.links_mobile} theme ${mode}`}>
           {navbarLinks.map((link) => (
             <div className={styles.links_mobile_box} key={link.id}>
               <Link href={link.url} className={styles.single_link}>
