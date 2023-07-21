@@ -1,8 +1,8 @@
 import { Inter, Roboto } from "next/font/google";
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
+import { ThemeProvider } from "@/utils/context/themeContext";
 import "./globals.css";
-import { ThemeProvider } from "@/context/themeContext";
 
 const inter = Roboto({ weight: "400", subsets: ["latin"] });
 

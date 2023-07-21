@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useContext, useState } from "react";
 import styles from "./navbar.module.css";
 import DarkModeToggle from "../darkModeToggle/darkModeToggle";
-import { ThemeContext } from "@/context/themeContext";
+import { ThemeContext } from "@/utils/context/themeContext";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

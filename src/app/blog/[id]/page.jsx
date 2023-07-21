@@ -1,16 +1,34 @@
 import React from "react";
 import styles from "./blogId.module.css";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
-const BlogPost = () => {
+const getData = async (id) => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    return notFound();
+  }
+  // console.log(res) => we will see it on the terminal window(SSR);
+  return res.json();
+};
+
+const BlogPost = async ({ params }) => {
+  const data = await getData(params.id);
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <div className={styles.info}>
-          <h1 className={styles.title}>Lorem, ipsum dolor.</h1>
+          <h1 className={styles.title}>{data.title}</h1>
           <p className={styles.desc}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
-            ducimus perferendis laborum unde architecto fuga? Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore mollitia earum numquam ex commodi, ipsa delectus dolores! Dolores, eligendi voluptates!
+            ducimus perferendis laborum unde architecto fuga? Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Inventore mollitia earum
+            numquam ex commodi, ipsa delectus dolores! Dolores, eligendi
+            voluptates!
           </p>
           <div className={styles.author}>
             <Image
