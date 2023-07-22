@@ -48,7 +48,7 @@
 @media (max-width: 1200px) {
   .item {
     flex-direction: column;
-    height: 500px;
+    min-height: 500px;
     /* border: 3px solid #bbb; */
     border-radius: 8px;
     box-shadow: 0px 0px 5px 0.5px #000000;
@@ -60,6 +60,7 @@
 
   .img_container {
     order: 1;
+    flex: auto;
   }
 
   .content {
