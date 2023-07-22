@@ -12,7 +12,7 @@ const getData = (cat) => {
     return data;
   }
 
-  return notFound;
+  return notFound();
 };
 
 const Category = ({ params }) => {
