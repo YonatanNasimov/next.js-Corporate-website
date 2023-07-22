@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className={styles.container}>
       <div>
-        ©{year} {companyName}. All rights reserved
+        {`©${year} ${companyName}`}. All rights reserved
       </div>
       <div className={styles.social_icons}>
         {footerSocialLinks.map((link) => (
