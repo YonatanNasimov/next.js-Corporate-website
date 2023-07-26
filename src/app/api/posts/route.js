@@ -5,8 +5,8 @@ import PostModel from "@/MongoDB/models/postModel";
 export const GET = async (request) => {
   try {
     await connect();
-    const posts = await PostModel.find();
-    return new NextResponse(posts, {
+    // const posts = await PostModel.find();
+    return new NextResponse("posts", {
       status: 200,
     });
   } catch (err) {
