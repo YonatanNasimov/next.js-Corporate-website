@@ -1,6 +1,4 @@
-import mongoose from "mongoose";
-
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 
 const userSchema = new Schema(
   {
@@ -23,7 +21,7 @@ const userSchema = new Schema(
       require: true,
     },
     imgUrl: {
-      type: String
+      type: String,
     },
     role: {
       type: String,
@@ -35,4 +33,5 @@ const userSchema = new Schema(
   }
 );
 
-export default mongoose.model("users", userSchema);
+const UserModel = mongoose.model("users", userSchema);
+export default UserModel;
