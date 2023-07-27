@@ -15,9 +15,6 @@ const Navbar = () => {
   };
 
   const { mode } = useContext(ThemeContext);
-
-  console.log("env: " + config.MONGO_DB_URL);
-
   return (
     <header className={styles.container}>
       <div>
