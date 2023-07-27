@@ -5,6 +5,7 @@ import React, { useContext, useState } from "react";
 import styles from "./navbar.module.css";
 import DarkModeToggle from "../darkModeToggle/darkModeToggle";
 import { ThemeContext } from "@/utils/context/themeContext";
+import config from "@/secret/config";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,6 +15,8 @@ const Navbar = () => {
   };
 
   const { mode } = useContext(ThemeContext);
+
+  console.log("env: " + config.MONGO_DB_URL);
 
   return (
     <header className={styles.container}>
