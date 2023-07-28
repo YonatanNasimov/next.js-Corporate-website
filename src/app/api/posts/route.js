@@ -11,9 +11,8 @@ export const GET = async (request) => {
     });
   } catch (err) {
     console.log(err);
-    return new NextResponse("There is an error connecting to MongoDB" + err, {
+    return new NextResponse(err, {
       status: 500,
     });
   }
 };
-
