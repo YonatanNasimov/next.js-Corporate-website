@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
 
-const postSchema = new mongoose.Schema(
+const { Schema } = mongoose;
+mongoose.Promise = global.Promise;
+
+const postSchema = new Schema(
   {
     title: {
       type: String,
@@ -28,3 +31,7 @@ const postSchema = new mongoose.Schema(
 );
 
 export default mongoose.models.PostModel || mongoose.model("posts", postSchema);
+
+
+// module.exports =
+//     mongoose.models.Customer || mongoose.model('Customer', customerSchema);
