@@ -1,37 +1,33 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 mongoose.Promise = global.Promise;
 
-const postSchema = new Schema(
-  {
-    title: {
-      type: String,
-      require: true,
-    },
-    desc: {
-      type: String,
-      require: true,
-    },
-    imgUrl: {
-      type: String,
-    },
-    content: {
-      type: String,
-      require: true,
-    },
-    user: {
-      type: String,
-      require: true,
-    },
+const postSchema = new Schema({
+  title: {
+    type: String,
+    required: "Please supply a title",
+    trim: true,
   },
-  {
-    timestamps: true,
-  }
-);
+  desc: {
+    type: String,
+    required: "Please supply a desc",
+    trim: true,
+  },
+  imgUrl: {
+    type: String,
+    required: "Please supply a imgUrl",
+  },
+  content: {
+    type: String,
+    required: "Please supply a content"
+  },
+  user: {
+    type: String,
+    required: "Please supply a user",
+    trim: true,
+  },
+});
 
-export default mongoose.models.PostModel || mongoose.model("posts", postSchema);
-
-
-// module.exports =
-//     mongoose.models.Customer || mongoose.model('Customer', customerSchema);
+export default mongoose.models.Posts ||
+  mongoose.model("Posts", postSchema);
