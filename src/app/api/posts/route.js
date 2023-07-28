@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import connect from "@/MongoDB/DBConnection";
-import { PostModel } from "@/MongoDB/models/postModel";
+import PostModel from "@/MongoDB/models/postModel";
 // import mongoose from 'mongoose';
 
 export const GET = async (request) => {

@@ -1,5 +1,5 @@
 import config from "@/secret/config";
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const connect = () => {
   mongoose
@@ -13,3 +13,12 @@ const connect = () => {
 };
 
 export default connect;
+
+// const connection = async () => {
+//   try {
+//     await mongoose.connect(config.MONGO_DB_URL);
+//     console.log("mongo connect!")
+//   } catch (err) {
+//     throw new Error("connection failed: " + err);
+//   }
+// };
