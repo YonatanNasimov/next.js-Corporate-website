@@ -31,8 +31,7 @@ const Blog = async () => {
           <div className={styles.image_container}>
             <Image
               src={
-                `${post.imgUrl}` ||
-                "https://www.pexels.com/photo/lizard-17728405"
+                post.imgUrl || "https://www.pexels.com/photo/lizard-17728405/"
               }
               alt={post.title}
               width={400}
