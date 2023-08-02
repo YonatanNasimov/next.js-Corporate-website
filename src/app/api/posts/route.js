@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { connection } from "@/MongoDB/DBConnection";
-import postsModel from "@/MongoDB/models/postModel";
+import postsModel from "@utils/mongoDB/models/postModel";
 
 export const GET = async (request) => {
   try {
