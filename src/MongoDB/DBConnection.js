@@ -1,4 +1,4 @@
-import config from "@/secret/config";
+import config from "@/utils/secret/config";
 import mongoose from "mongoose";
 
 export const connection = async () => {

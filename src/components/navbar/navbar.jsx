@@ -5,7 +5,7 @@ import React, { useContext, useState } from "react";
 import styles from "./navbar.module.css";
 import DarkModeToggle from "../darkModeToggle/darkModeToggle";
 import { ThemeContext } from "@/utils/context/themeContext";
-import config from "@/secret/config";
+import config from "@/utils/secret/config";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
