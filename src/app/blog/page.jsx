@@ -2,11 +2,12 @@ import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { API_POSTS } from "@utils/apiCalls/urls";
 
 const getData = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+  const res = await fetch(API_POSTS, {
     cache: "no-store",
-  })
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -22,11 +23,18 @@ const Blog = async () => {
     <div className={styles.main_container}>
       <h1 className={styles.main_title}>See Our Community:</h1>
       {data.map((post) => (
-        <Link key={post.id} href={`/blog/${post.id}`} className={styles.container}>
+        <Link
+          key={post._id}
+          href={`/blog/${post._id}`}
+          className={styles.container}
+        >
           <div className={styles.image_container}>
             <Image
-              src="/images/contact.png"
-              alt=""
+              src={
+                `${post.imgUrl}` ||
+                "https://www.pexels.com/photo/lizard-17728405"
+              }
+              alt={post.title}
               width={400}
               height={250}
               className={styles.image}
@@ -34,12 +42,7 @@ const Blog = async () => {
           </div>
           <div className={styles.content}>
             <h1 className={styles.title}>{post.title}</h1>
-            <p className={styles.desc}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              architecto sint rem voluptas illo quibusdam incidunt ducimus atque
-              corrupti mollitia esse autem distinctio error, facere vero
-              repellendus placeat voluptatum eos.
-            </p>
+            <p className={styles.desc}>{post.desc}</p>
           </div>
         </Link>
       ))}

@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import { connection } from "@/MongoDB/DBConnection";
+import { connection } from "@utils/mongoDB/DBConnection";
 import postsModel from "@utils/mongoDB/models/postModel";
 
 export const GET = async (request) => {
   try {
     await connection();
     const posts = await postsModel.find();
-    return new NextResponse(posts, {
+    return new NextResponse(JSON.stringify(posts), {
       status: 200,
     });
   } catch (err) {
