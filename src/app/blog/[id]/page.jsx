@@ -2,9 +2,10 @@ import React from "react";
 import styles from "./blogId.module.css";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { API_POSTS } from "@utils/apiCalls/urls";
 
 const getData = async (id) => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  const res = await fetch(`${API_POSTS}/${id}`, {
     cache: "no-store",
   });
 
