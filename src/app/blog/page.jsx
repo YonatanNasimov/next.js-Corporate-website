@@ -12,13 +12,12 @@ const getData = async () => {
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
-  // console.log(res) => we will see it on the terminal window(SSR);
+  console.log(res); //we will see it on the terminal window(SSR);
   return res.json();
 };
 
 const Blog = async () => {
   const data = await getData();
-
   return (
     <div className={styles.main_container}>
       <h1 className={styles.main_title}>See Our Community:</h1>
@@ -30,7 +29,7 @@ const Blog = async () => {
         >
           <div className={styles.image_container}>
             <Image
-              src={data.imgUrl ? data.imgUrl : "/images/contact.png"}
+              src={post.imgUrl ? post.imgUrl : "/images/contact.png"}
               alt={post.title}
               width={400}
               height={250}

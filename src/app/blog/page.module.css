@@ -10,9 +10,14 @@
   gap: 50px;
   margin-bottom: 50px;
 }
+.image_container{
+  padding: 0px;
+}
 
 .image {
-  object-fit: cover;
+  max-width: 100%;
+  padding: 0px;
+  object-fit: contain;
 }
 
 /* .content {} */
