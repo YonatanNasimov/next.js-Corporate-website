@@ -27,7 +27,7 @@ const BlogPost = async ({ params }) => {
           <p className={styles.desc}>{data.desc}</p>
           <div className={styles.author}>
             <Image
-              src={data.user.imgUrl ? data.user.imgUrl : data.imgUrl}
+              src={data.user.imgUrl ? data.user.imgUrl : "/images/user.avif"}
               alt={data.title}
               width={40}
               height={40}

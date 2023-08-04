@@ -30,7 +30,7 @@ const Blog = async () => {
         >
           <div className={styles.image_container}>
             <Image
-              src={post.imgUrl}
+              src={data.imgUrl ? data.imgUrl : "/images/contact.png"}
               alt={post.title}
               width={400}
               height={250}
