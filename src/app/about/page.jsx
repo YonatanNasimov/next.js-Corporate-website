@@ -2,6 +2,12 @@ import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Button from "@components/button/button";
+import { companyName } from "@utils/staticData/links";
+
+export const metadata = {
+  title: `About us - ${companyName}`,
+  description: "What we are...",
+};
 
 const About = () => {
   return (

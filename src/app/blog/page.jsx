@@ -3,6 +3,12 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { API_POSTS } from "@utils/apiCalls/urls";
+import { companyName } from "@utils/staticData/links";
+
+export const metadata = {
+  title: `${companyName} - Our Community`,
+  description: "See our what our community sharing",
+};
 
 const getData = async () => {
   const res = await fetch(API_POSTS, {

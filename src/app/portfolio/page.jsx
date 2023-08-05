@@ -1,6 +1,12 @@
 import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
+import { companyName } from "@utils/staticData/links";
+
+export const metadata = {
+  title: `Portfolio - ${companyName}`,
+  description: "Sea what we can do",
+};
 
 const Portfolio = () => {
   return (

@@ -2,6 +2,17 @@
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import useSWR from "swr";
+import { companyName } from "@utils/staticData/links";
+
+export const metadata = {
+  title: `Sign in - ${companyName}`,
+  description: "Sign in to our site and share your posts with us",
+};
+
+// export const metadata = {
+//   title: `Sign up - ${companyName}`,
+//   description: "Sign up to our site and you will be one our community",
+// };
 
 const Dashboard = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());

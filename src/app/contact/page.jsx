@@ -2,6 +2,12 @@ import React from "react";
 import styles from "./paga.module.css";
 import Image from "next/image";
 import Button from "@/components/button/button";
+import { companyName } from "@utils/staticData/links";
+
+export const metadata = {
+  title: `Contacr Us - ${companyName}`,
+  description: "Send us a message",
+};
 
 const Contact = () => {
   return (
