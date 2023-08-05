@@ -2,7 +2,7 @@ export const items = {
     applications: [
       {
         id: 1,
-        title: "Creative Portfolio",
+        title: "applications Creative Portfolio",
         desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
         image:
           "https://images.pexels.com/photos/3130810/pexels-photo-3130810.jpeg",
@@ -25,7 +25,7 @@ export const items = {
     illustrations: [
       {
         id: 1,
-        title: "Creative Portfolio",
+        title: " illustrations Creative Portfolio",
         desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
         image:
           "https://images.pexels.com/photos/3130810/pexels-photo-3130810.jpeg",
@@ -48,7 +48,7 @@ export const items = {
     websites: [
       {
         id: 1,
-        title: "Creative Portfolio",
+        title: "websites Creative Portfolio",
         desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur vel tenetur necessitatibus unde natus perspiciatis, amet cupiditate ducimus possimus, eaque ex autem id nobis eum dolorem. Neque eveniet fugiat tenetur?",
         image:
           "https://images.pexels.com/photos/3130810/pexels-photo-3130810.jpeg",

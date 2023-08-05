@@ -11,13 +11,24 @@ const getData = (cat) => {
   if (data) {
     return data;
   }
-
+  
   return notFound();
 };
 
+export async function generateMetadata({ params }) {
+  const category = params.category;
+
+  const data = category;
+
+  return {
+    title: data.title,
+    description: data.desc,
+  };
+}
+
 const Category = ({ params }) => {
   const data = getData(params.category);
-
+  console.log(data);
   return (
     <div className={styles.container}>
       <h2 className={styles.cat_title}>{params.category}:</h2>

@@ -5,7 +5,7 @@ import Button from "@/components/button/button";
 import { companyName } from "@utils/staticData/links";
 
 export const metadata = {
-  title: `Contacr Us - ${companyName}`,
+  title: `Contact Us - ${companyName}`,
   description: "Send us a message",
 };
 
