@@ -1,9 +1,10 @@
 import { Inter, Roboto } from "next/font/google";
-import Footer from "@/components/footer/footer";
-import Navbar from "@/components/navbar/navbar";
-import { ThemeProvider } from "@/utils/context/themeContext";
-import "./globals.css";
+import Footer from "@components/footer/footer";
+import Navbar from "@components/navbar/navbar";
+import { ThemeProvider } from "@utils/context/themeContext";
 import { companyName } from "@utils/staticData/links";
+import AuthProvider from "@components/authProvider/authProvider";
+import "./globals.css";
 
 const inter = Roboto({ weight: "400", subsets: ["latin"] });
 
@@ -23,11 +24,13 @@ const RootLayout = ({ children }) => {
       </head>
       <body className={inter.className}>
         <ThemeProvider>
-          <div className="container">
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </div>
+          <AuthProvider>
+            <div className="container">
+              <Navbar />
+              <main>{children}</main>
+              <Footer />
+            </div>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
