@@ -1,15 +1,15 @@
-import React from 'react'
-import { companyName } from "@utils/staticData/links";
+"use client";
 
-export const metadata = {
-  title: `Log in - ${companyName}`,
-  description: "Log in to our site and share your posts with us",
-};
+import React from "react";
+import styles from "./page.module.css";
+import { signIn } from "next-auth/react";
 
 const Login = () => {
   return (
-    <div>Login</div>
-  )
-}
+    <div className={styles.container}>
+      <button onClick={() => signIn("google")}>Login With Google</button>
+    </div>
+  );
+};
 
-export default Login
+export default Login;

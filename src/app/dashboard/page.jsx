@@ -5,11 +5,6 @@ import useSWR from "swr";
 import { companyName } from "@utils/staticData/links";
 import { useSession } from "next-auth/react";
 
-export const metadata = {
-  // check the metadata
-  title: `${companyName} - Dashboard`,
-  description: "Dashboard page with user information",
-};
 
 const Dashboard = () => {
   const session = useSession();
@@ -20,8 +15,7 @@ const Dashboard = () => {
     "https://jsonplaceholder.typicode.com/posts",
     fetcher
   );
-
-  console.log(data);
+  
   return (
     <div className={styles.container}>
       Dashboard
