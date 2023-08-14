@@ -7,7 +7,8 @@ import Link from "next/link";
 const Signup = () => {
   return (
     <div className={styles.container}>
-      <form>
+      <h1 className={styles.title}>Sign Up</h1>
+      <form className={styles.form}>
         <input
           type="text"
           placeholder="Write your Username"
@@ -40,7 +41,9 @@ const Signup = () => {
         />
         <button className={styles.button}>Sign Up</button>
       </form>
-      <Link href="/dashboard/login">You already have an account? Login</Link>
+      <Link className={styles.link} href="/dashboard/login">
+        You already have an account? Login
+      </Link>
     </div>
   );
 };
