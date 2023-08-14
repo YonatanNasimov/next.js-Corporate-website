@@ -1,10 +1,9 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import useSWR from "swr";
-import { companyName } from "@utils/staticData/links";
 import { useSession } from "next-auth/react";
-
 
 const Dashboard = () => {
   const session = useSession();
@@ -15,7 +14,7 @@ const Dashboard = () => {
     "https://jsonplaceholder.typicode.com/posts",
     fetcher
   );
-  
+
   return (
     <div className={styles.container}>
       Dashboard
