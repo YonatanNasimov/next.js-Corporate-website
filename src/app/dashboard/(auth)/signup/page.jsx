@@ -7,7 +7,7 @@ import { API_SIGN_UP } from "@utils/apiCalls/urls";
 
 const Signup = () => {
   const [err, setErr] = useState(false);
-
+  //2:32 => video
   const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target[0].value;
