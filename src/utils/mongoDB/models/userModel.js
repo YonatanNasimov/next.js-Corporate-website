@@ -1,4 +1,7 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
+
+const { Schema } = mongoose;
+mongoose.Promise = global.Promise;
 
 const userSchema = new Schema(
   {
@@ -14,10 +17,9 @@ const userSchema = new Schema(
       require: true,
       trim: true,
     },
-    phone: {
-      type: String,
-      unique: true,
-    },
+    // phone: {
+    //   type: String,
+    // },
     password: {
       type: String,
       require: true,
@@ -36,5 +38,5 @@ const userSchema = new Schema(
   }
 );
 
-const UserModel = mongoose.model("users", userSchema);
-export default UserModel;
+export default mongoose.models.Users ||
+  mongoose.model("Users", userSchema);

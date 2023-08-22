@@ -9,16 +9,17 @@ import { useRouter } from "next/navigation";
 const Signup = () => {
   const [err, setErr] = useState(false);
   const router = useRouter();
-  //2:32 => video
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
-    const phone = e.target[3].value;
+    // const phone = e.target[3].value;
     const imgUrl = e.target[4].value;
+    console.log({name, email, password, imgUrl});
     try {
-      const res = await fetch("http://localhost:3000/api/auth/signup", {
+      const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,12 +32,11 @@ const Signup = () => {
           imgUrl,
         }),
       });
-
       res.status === 201 &&
-        router.push("/dashboard/login?succes=Account has been created");
-    } catch (error) {
-      setErr(true);
-      console.log("error: " + error);
+        router.push("/dashboard/login?success=Account has been created");
+    } catch (err) {
+      setErr(err);
+      console.log(err);
     }
   };
 
@@ -62,12 +62,12 @@ const Signup = () => {
           className={styles.input}
           required
         />
-        <input
+        {/* <input
           type="text"
           placeholder="Write your Phone"
           className={styles.input}
           required
-        />
+        /> */}
         <input
           type="url"
           placeholder="Place an img url"
