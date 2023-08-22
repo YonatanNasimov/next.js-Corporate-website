@@ -23,7 +23,7 @@ const Signup = () => {
     );
 
     try {
-      const res = await fetch("/api/auth/signup", {
+      const res = await fetch(API_SIGN_UP, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,7 +38,8 @@ const Signup = () => {
       });
 
       console.log(
-        "Body_2: " + JSON.stringify({ username, email, password, phone, imgUrl })
+        "Body_2: " +
+          JSON.stringify({ username, email, password, phone, imgUrl })
       );
 
       res.status === 201 &&
@@ -60,28 +61,28 @@ const Signup = () => {
           type="text"
           placeholder="Write your username"
           className={styles.input}
-          value="user1"
+          value="user2"
           required
         />
         <input
           type="email"
           placeholder="Write your Email"
           className={styles.input}
-          value="user1@gmail.com"
+          value="user2@gmail.com"
           required
         />
         <input
           type="password"
           placeholder="Write your Password"
           className={styles.input}
-          value="user1"
+          value="user2"
           required
         />
         <input
           type="text"
           placeholder="Write your Phone"
           className={styles.input}
-          value="0547211498"
+          value="0547221498"
           required
         />
         <input

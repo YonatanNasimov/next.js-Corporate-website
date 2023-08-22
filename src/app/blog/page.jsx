@@ -2,28 +2,17 @@ import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { API_POSTS } from "@utils/apiCalls/urls";
 import { companyName } from "@utils/staticData/links";
+import { getData } from "@/utils/apiCalls/fetchMethods";
+import { API_POSTS } from "@utils/apiCalls/urls";
 
 export const metadata = {
   title: `${companyName} - Our Community`,
   description: "See our what our community sharing",
 };
 
-const getData = async () => {
-  const res = await fetch(API_POSTS, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  console.log(res); //we will see it on the terminal window(SSR);
-  return res.json();
-};
-
 const Blog = async () => {
-  const data = await getData();
+  const data = await getData(API_POSTS);
   return (
     <div className={styles.main_container}>
       <h1 className={styles.main_title}>See Our Community:</h1>
