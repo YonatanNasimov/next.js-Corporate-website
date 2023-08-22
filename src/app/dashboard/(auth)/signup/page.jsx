@@ -21,7 +21,7 @@ const Signup = () => {
     console.log("Body1: " + { name, email, password, phone, imgUrl });
 
     try {
-      const res = await fetch(API_SIGN_UP, {
+      const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,10 +34,18 @@ const Signup = () => {
           imgUrl,
         }),
       });
-      console.log("Body2: " + { name, email, password, phone, imgUrl });
+
+      console.log(
+        "Body2: " + JSON.stringify({ name, email, password, phone, imgUrl })
+      );
+
+      res.status === 201 &&
+        router.push("/dashboard/login?success=Account has been created");
     } catch (error) {
       setErr(true);
+
       console.log("BodyError: " + { name, email, password, phone, imgUrl });
+
       console.log(error);
     }
   };
@@ -50,30 +58,35 @@ const Signup = () => {
           type="text"
           placeholder="Write your Username"
           className={styles.input}
+          value="user1"
           required
         />
         <input
           type="email"
           placeholder="Write your Email"
           className={styles.input}
+          value="user1@gmail.com"
           required
         />
         <input
           type="password"
           placeholder="Write your Password"
           className={styles.input}
+          value="user1"
           required
         />
         <input
           type="text"
           placeholder="Write your Phone"
           className={styles.input}
+          value="0547211498"
           required
         />
         <input
           type="url"
           placeholder="Place an img url"
           className={styles.input}
+          value="https://images.pexels.com/photos/18034790/pexels-photo-18034790/free-photo-of-city-coffee-romantic-hotel.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
           required
         />
         <button className={styles.button}>Sign Up</button>
