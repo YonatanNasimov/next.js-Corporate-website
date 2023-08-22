@@ -28,7 +28,6 @@ const Signup = () => {
           name,
           email,
           password,
-          phone,
           imgUrl,
         }),
       });
