@@ -21,6 +21,8 @@ export const GET = async (request) => {
 export const POST = async (request) => {
   const { name, email, password, phone, imgUrl } = await request.json();
 
+  console.log(request.json());
+
   await connection();
 
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -32,7 +34,7 @@ export const POST = async (request) => {
     phone,
     imgUrl,
   });
-  
+
   try {
     await newUser.save();
     return new NextResponse("User has been created!", {
@@ -40,7 +42,7 @@ export const POST = async (request) => {
     });
   } catch (err) {
     console.log(err);
-    return new NextResponse(err.message, {
+    return new NextResponse("From Server: " + err.message, {
       status: 500,
     });
   }
