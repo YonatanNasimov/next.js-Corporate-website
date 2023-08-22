@@ -12,13 +12,15 @@ const Signup = () => {
   //2:32 => video
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const name = e.target[0].value;
+    const username = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
     const phone = e.target[3].value;
     const imgUrl = e.target[4].value;
 
-    console.log("Body1: " + { name, email, password, phone, imgUrl });
+    console.log(
+      "Body_1: " + JSON.stringify({ username, email, password, phone, imgUrl })
+    );
 
     try {
       const res = await fetch("/api/auth/signup", {
@@ -27,7 +29,7 @@ const Signup = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name,
+          username,
           email,
           password,
           phone,
@@ -36,7 +38,7 @@ const Signup = () => {
       });
 
       console.log(
-        "Body2: " + JSON.stringify({ name, email, password, phone, imgUrl })
+        "Body_2: " + JSON.stringify({ username, email, password, phone, imgUrl })
       );
 
       res.status === 201 &&
@@ -44,7 +46,7 @@ const Signup = () => {
     } catch (error) {
       setErr(true);
 
-      console.log("BodyError: " + { name, email, password, phone, imgUrl });
+      console.log("BodyError: " + { username, email, password, phone, imgUrl });
 
       console.log(error);
     }
@@ -56,7 +58,7 @@ const Signup = () => {
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Write your Username"
+          placeholder="Write your username"
           className={styles.input}
           value="user1"
           required
