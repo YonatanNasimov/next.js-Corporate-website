@@ -4,22 +4,20 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { API_SIGN_UP } from "@utils/apiCalls/urls";
-import { useRouter } from "next/navigation";
 
 const Signup = () => {
   const [err, setErr] = useState(false);
-  const router = useRouter();
-
+  //2:32 => video
   const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
-    // const phone = e.target[3].value;
+    const phone = e.target[3].value;
     const imgUrl = e.target[4].value;
-    console.log({name, email, password, imgUrl});
+
     try {
-      const res = await fetch("/api/auth/signup", {
+      const res = await fetch(API_SIGN_UP, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,14 +26,13 @@ const Signup = () => {
           name,
           email,
           password,
+          phone,
           imgUrl,
         }),
       });
-      res.status === 201 &&
-        router.push("/dashboard/login?success=Account has been created");
-    } catch (err) {
-      setErr(err);
-      console.log(err);
+    } catch (error) {
+      setErr(true);
+      console.log(error);
     }
   };
 
@@ -61,12 +58,12 @@ const Signup = () => {
           className={styles.input}
           required
         />
-        {/* <input
+        <input
           type="text"
           placeholder="Write your Phone"
           className={styles.input}
           required
-        /> */}
+        />
         <input
           type="url"
           placeholder="Place an img url"
