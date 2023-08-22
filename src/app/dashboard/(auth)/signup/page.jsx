@@ -4,9 +4,11 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { API_SIGN_UP } from "@utils/apiCalls/urls";
+import { useRouter } from "next/navigation";
 
 const Signup = () => {
   const [err, setErr] = useState(false);
+  const router = useRouter();
   //2:32 => video
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,6 +17,8 @@ const Signup = () => {
     const password = e.target[2].value;
     const phone = e.target[3].value;
     const imgUrl = e.target[4].value;
+
+    console.log("Body1: " + { name, email, password, phone, imgUrl });
 
     try {
       const res = await fetch(API_SIGN_UP, {
@@ -30,8 +34,10 @@ const Signup = () => {
           imgUrl,
         }),
       });
+      console.log("Body2: " + { name, email, password, phone, imgUrl });
     } catch (error) {
       setErr(true);
+      console.log("BodyError: " + { name, email, password, phone, imgUrl });
       console.log(error);
     }
   };
