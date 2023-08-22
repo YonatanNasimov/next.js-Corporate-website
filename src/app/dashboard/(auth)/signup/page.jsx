@@ -4,9 +4,11 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { API_SIGN_UP } from "@utils/apiCalls/urls";
+import { useRouter } from "next/navigation";
 
 const Signup = () => {
   const [err, setErr] = useState(false);
+  const router = useRouter;
   //2:32 => video
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +32,9 @@ const Signup = () => {
           imgUrl,
         }),
       });
+
+      res.status === 201 &&
+        router.push("/dashboard/login?succes=Account has been created");
     } catch (error) {
       setErr(true);
       console.log(error);

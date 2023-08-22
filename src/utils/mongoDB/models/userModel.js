@@ -6,11 +6,13 @@ const userSchema = new Schema(
       type: String,
       unique: true,
       require: true,
+      trim: true,
     },
     email: {
       type: String,
       unique: true,
       require: true,
+      trim: true,
     },
     phone: {
       type: String,
@@ -19,6 +21,7 @@ const userSchema = new Schema(
     password: {
       type: String,
       require: true,
+      trim: true,
     },
     imgUrl: {
       type: String,
