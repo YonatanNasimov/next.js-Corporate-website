@@ -8,6 +8,11 @@ import { useRouter } from "next/navigation";
 
 const Signup = () => {
   const [err, setErr] = useState(false);
+
+  const [errText, setErrText] = useState(
+    "The email or username are already signed up, try again!"
+  );
+
   const router = useRouter();
   //2:32 => video
   const handleSubmit = async (e) => {
@@ -44,12 +49,18 @@ const Signup = () => {
 
       res.status === 201 &&
         router.push("/dashboard/login?success=Account has been created");
+      //
+      res.status === 400 && setErr(true);
+      //
     } catch (error) {
       setErr(true);
 
-      console.log("BodyError: " + { username, email, password, phone, imgUrl });
+      console.log(
+        "BodyError: " +
+          JSON.stringify({ username, email, password, phone, imgUrl })
+      );
 
-      console.log(error);
+      console.log(err + error);
     }
   };
 
@@ -61,40 +72,35 @@ const Signup = () => {
           type="text"
           placeholder="Write your username"
           className={styles.input}
-          value="user2"
-          required
+          defaultValue="user4"
         />
         <input
           type="email"
           placeholder="Write your Email"
           className={styles.input}
-          value="user2@gmail.com"
-          required
+          defaultValue="user4@gmail.com"
         />
         <input
           type="password"
           placeholder="Write your Password"
           className={styles.input}
-          value="user2"
-          required
+          defaultValue="user4"
         />
         <input
           type="text"
           placeholder="Write your Phone"
           className={styles.input}
-          value="0547221498"
-          required
+          defaultValue="0547221498"
         />
         <input
           type="url"
           placeholder="Place an img url"
           className={styles.input}
-          value="https://images.pexels.com/photos/18034790/pexels-photo-18034790/free-photo-of-city-coffee-romantic-hotel.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-          required
+          defaultValue="https://images.pexels.com/photos/18034790/pexels-photo-18034790/free-photo-of-city-coffee-romantic-hotel.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
         />
         <button className={styles.button}>Sign Up</button>
       </form>
-      {err && "There Was A Problem, Try Again!"}
+      {err && <span style={{ color: "red" }}>{errText}</span>}
       <Link className={styles.link} href="/dashboard/login">
         You already have an account? Login
       </Link>
