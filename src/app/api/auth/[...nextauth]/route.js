@@ -19,7 +19,7 @@ const handler = NextAuth({
         await connection();
 
         try {
-          const user = userModel.findOne({ email: credentials.email });
+          const user = await userModel.findOne({ email: credentials.email });
           if (user) {
             // checked password
             const isPassword = await bcrypt.compare(
