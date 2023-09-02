@@ -14,7 +14,7 @@ const Login = () => {
   };
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Sign In</h1>
+      <h1 className={styles.title}>Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="email"
@@ -28,7 +28,7 @@ const Login = () => {
           className={styles.input}
           defaultValue="user1"
         />
-        <button className={styles.button}>Sign In</button>
+        <button className={styles.button}>Login</button>
       </form>
       <button onClick={() => signIn("google")}>Login With Google</button>
     </div>
