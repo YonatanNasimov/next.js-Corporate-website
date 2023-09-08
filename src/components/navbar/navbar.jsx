@@ -6,8 +6,11 @@ import styles from "./navbar.module.css";
 import DarkModeToggle from "../darkModeToggle/darkModeToggle";
 import { ThemeContext } from "@/utils/context/themeContext";
 import config from "@/utils/secret/config";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const session = useSession();
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleToggleMobileMenu = () => {
@@ -29,14 +32,11 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        <button
-          onClick={() => {
-            console.log("Logged Out..."); // we will use 'CSR' because here we need some interact we user who use our app/system/website and its a small component, The first rendering is already done (deatails what importent for google scan already done).
-          }}
-          className={styles.logout_button}
-        >
-          Log Out
-        </button>
+        {session.status === "authenticated" && (
+          <button onClick={signOut} className={styles.logout_button}>
+            Log Out
+          </button>
+        )}
       </div>
       {isMobileMenuOpen ? (
         <div className={`${styles.links_mobile} theme ${mode}`}>
@@ -49,14 +49,11 @@ const Navbar = () => {
             </div>
           ))}
           <div className={styles.dark_mode_box}>
-            <button
-              onClick={() => {
-                console.log("Logged Out..."); // we will use 'CSR' because here we need some interact we user who use our app/system/website and its a small component, The first rendering is already done (deatails what importent for google scan already done).
-              }}
-              className={styles.logout_button}
-            >
-              Log Out
-            </button>
+            {session.status === "authenticated" && (
+              <button onClick={signOut} className={styles.logout_button}>
+                Log Out
+              </button>
+            )}
             <DarkModeToggle />
           </div>
         </div>
@@ -71,3 +68,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+// we will use 'CSR' because here we need some interact we user who use our app/system/website and its a small component, The first rendering is already done (deatails what importent for google scan already done).

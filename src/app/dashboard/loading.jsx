@@ -1,11 +1,8 @@
 import Spiner from "@/components/spiner/spiner";
 import React from "react";
 
-
 const Loading = () => {
-  return (
-    <Spiner/>
-  );
+  return <Spiner />;
 };
 
 export default Loading;
