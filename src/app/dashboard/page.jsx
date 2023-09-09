@@ -12,15 +12,13 @@ const Dashboard = () => {
 
   const router = useRouter();
 
-  // console.log(session);
-
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
   const { data, error, isLoading } = useSWR(
-    `/api/posts?user=${session?.data?.user.name}`,
+    `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
-  console.log(session);
+  
   console.log(data);
 
   if (session.status === "unauthenticated") {
