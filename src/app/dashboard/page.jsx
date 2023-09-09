@@ -21,12 +21,12 @@ const Dashboard = () => {
     fetcher
   );
 
-  if (session.status === "loading") {
-    return <Spiner />;
-  }
-
   if (session.status === "unauthenticated") {
     router?.push("/dashboard/login");
+  }
+  
+  if (session.status === "loading") {
+    return <Spiner />;
   }
 
   if (session.status === "authenticated") {
