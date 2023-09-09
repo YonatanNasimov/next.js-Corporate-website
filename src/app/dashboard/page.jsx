@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import Spiner from "@components/spiner/spiner";
 import Image from "next/image";
+import Link from "next/link";
 
 const Dashboard = () => {
   const session = useSession();
@@ -30,15 +31,24 @@ const Dashboard = () => {
     return <Spiner />;
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const title = e.target[0].value;
     const desc = e.target[1].value;
-    const img = e.target[2].value;
+    const imgUrl = e.target[2].value;
     const content = e.target[3].value;
 
     try {
-
+      await fetch("/api/posts", {
+        method: "POST",
+        body: JSON.stringify({
+          title,
+          desc,
+          imgUrl,
+          content,
+          user: session.data.user.name,
+        }),
+      });
     } catch (err) {
       console.log(err);
     }
@@ -48,30 +58,38 @@ const Dashboard = () => {
     return (
       <div className={styles.container}>
         <div className={styles.posts}>
-          {isLoading
-            ? "loading"
-            : data?.map((post) => (
-                <div className={styles.post} key={post._id}>
-                  <div className={styles.img_container}>
-                    <Image
-                      src={post.img}
-                      alt={post.title}
-                      width={200}
-                      height={100}
-                    />
-                  </div>
-                  <h2 className={styles.postTitle}>{post.title}</h2>
-                  <span
-                    className={styles.delete}
-                    onClick={() => handleDelete(post._id)}
-                  >
-                    X
-                  </span>
+          <h2>My Posts:</h2>
+          {data ? "" : "Upload your first post: "}
+          {isLoading ? (
+            <Spiner />
+          ) : (
+            data?.map((post) => (
+              <Link
+                href={`/blog/${post._id}`}
+                className={styles.post}
+                key={post._id}
+              >
+                <div className={styles.img_container}>
+                  <Image
+                    src={post.imgUrl}
+                    alt={post.title}
+                    width={200}
+                    height={100}
+                  />
                 </div>
-              ))}
+                <h2 className={styles.postTitle}>{post.title}</h2>
+                <span
+                  className={styles.delete}
+                  onClick={() => handleDelete(post._id)}
+                >
+                  X
+                </span>
+              </Link>
+            ))
+          )}
         </div>
         <form className={styles.new} onSubmit={handleSubmit}>
-          <h1>Add New Post</h1>
+          <h2>Add New Post</h2>
           <input type="text" placeholder="Title" className={styles.input} />
           <input type="text" placeholder="Desc" className={styles.input} />
           <input type="text" placeholder="Image" className={styles.input} />

@@ -18,7 +18,7 @@ const Login = () => {
   if (session.status === "authenticated") {
     router?.push("/dashboard");
   }
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target[0].value;
