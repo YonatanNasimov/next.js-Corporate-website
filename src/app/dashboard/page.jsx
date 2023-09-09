@@ -12,19 +12,21 @@ const Dashboard = () => {
 
   const router = useRouter();
 
-  console.log(session);
+  // console.log(session);
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
   const { data, error, isLoading } = useSWR(
-    "https://jsonplaceholder.typicode.com/posts",
+    `/api/posts?user=${session?.data?.user.name}`,
     fetcher
   );
+  console.log(session);
+  console.log(data);
 
   if (session.status === "unauthenticated") {
     router?.push("/dashboard/login");
   }
-  
+
   if (session.status === "loading") {
     return <Spiner />;
   }

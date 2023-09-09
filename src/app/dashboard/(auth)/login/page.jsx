@@ -16,7 +16,7 @@ const Login = () => {
   }
 
   if (session.status === "authenticated") {
-    return <div className={styles.container}>Dashboard</div>;
+    router?.push("/dashboard");
   }
 
   const handleSubmit = async (e) => {
