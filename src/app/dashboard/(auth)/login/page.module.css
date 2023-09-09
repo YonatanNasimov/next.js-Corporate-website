@@ -43,6 +43,18 @@
     text-decoration: underline;
 }
 
+.link:hover {
+    color: rgb(61, 61, 61);
+}
+
+.google {
+    background-color: rgba(228, 97, 50, 0.72);
+}
+
+.google:hover {
+    background-color: rgba(228, 97, 50, 0.803);
+}
+
 @media (max-width: 1200px) {
     .title {
         font-size: 48px;

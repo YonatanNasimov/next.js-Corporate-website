@@ -16,7 +16,7 @@ const Dashboard = () => {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-  const { data, error, isLoading } = useSWR(
+  const { data, mutate, error, isLoading } = useSWR(
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
@@ -49,6 +49,7 @@ const Dashboard = () => {
           user: session.data.user.name,
         }),
       });
+      mutate()
     } catch (err) {
       console.log(err);
     }

@@ -44,7 +44,7 @@ const Login = () => {
         />
         <button className={styles.button}>Login</button>
       </form>
-      <button onClick={() => signIn("google")}>Login With Google</button>
+      <button className={`${styles.button}  ${styles.google}`} onClick={() => signIn("google")}>Login With Google</button>
     </div>
   );
 };
