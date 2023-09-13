@@ -17,3 +17,20 @@ export const GET = async (request, { params }) => {
     });
   }
 };
+
+export const DELETE = async (request, { params }) => {
+  const { id } = params;
+  try {
+    await connection();
+    await postsModel.findByIdAndDelete(id);
+
+    return new NextResponse("Post has been deleted", {
+      status: 200,
+    });
+  } catch (err) {
+    console.log(err);
+    return new NextResponse(err, {
+      status: 500,
+    });
+  }
+};

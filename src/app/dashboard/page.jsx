@@ -49,9 +49,20 @@ const Dashboard = () => {
           user: session.data.user.name,
         }),
       });
-      mutate()
+      mutate();
     } catch (err) {
       console.log(err);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`/api/posts/${id}`, {
+        method: "DELETE",
+      });
+      mutate();
+    } catch (err) {
+      console, log(err);
     }
   };
 
@@ -65,11 +76,7 @@ const Dashboard = () => {
             <Spiner />
           ) : (
             data?.map((post) => (
-              <Link
-                href={`/blog/${post._id}`}
-                className={styles.post}
-                key={post._id}
-              >
+              <div className={styles.post} key={post._id}>
                 <div className={styles.img_container}>
                   <Image
                     src={post.imgUrl}
@@ -78,14 +85,16 @@ const Dashboard = () => {
                     height={100}
                   />
                 </div>
-                <h2 className={styles.postTitle}>{post.title}</h2>
+                <Link href={`/blog/${post._id}`}>
+                  <h2 className={styles.postTitle}>{post.title}</h2>
+                </Link>
                 <span
                   className={styles.delete}
                   onClick={() => handleDelete(post._id)}
                 >
                   X
                 </span>
-              </Link>
+              </div>
             ))
           )}
         </div>
