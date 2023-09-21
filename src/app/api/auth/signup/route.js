@@ -43,11 +43,7 @@ export const POST = async (request) => {
   });
 
   try {
-    // console.log("Before save: " + newUser);
-
     await newUser.save();
-
-    // console.log("After save: " + newUser);
 
     return new NextResponse("User has been created!", {
       status: 201,
